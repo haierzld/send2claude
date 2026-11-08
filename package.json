@@ -1,0 +1,42 @@
+{
+  "name": "send2claude",
+  "displayName": "Send to Claude Code",
+  "description": "右键文件直接添加到 Claude Code 对话框（资源管理器/编辑器右键菜单）",
+  "version": "0.0.2",
+  "publisher": "edwin",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:send2claude.addFiles"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "send2claude.addFiles",
+        "title": "添加到 Claude Code",
+        "category": "Claude"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "send2claude.addFiles",
+          "when": "!explorerResourceIsFolder",
+          "group": "claudecode"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "send2claude.addFiles",
+          "when": "editorTextFocus",
+          "group": "claudecode"
+        }
+      ]
+    }
+  }
+}
