@@ -25,13 +25,17 @@ Claude Code 官方 VS Code 扩展（2.1.x）自带把当前文件插入对话的
 
 方式一：从 [Releases](../../releases) 下载 `send2claude-0.0.2.vsix`，在扩展面板选择「从 VSIX 安装…」。仓库内 `dist/` 也保留同一文件。
 
-方式二：命令行安装
+方式二：命令行安装（CodeBuddy CN 的 CLI 在安装目录的 `bin\buddycn.cmd`）
 
 ```powershell
-& "e:\Users\admin\AppData\Local\Programs\CodeBuddy CN\bin\buddycn.cmd" --install-extension ".\dist\send2claude-0.0.2.vsix"
+buddycn.cmd --install-extension .\dist\send2claude-0.0.2.vsix
 ```
 
-VS Code 用户把命令换成本机的 `code --install-extension ...` 即可。
+VS Code 用户换成：
+
+```powershell
+code --install-extension .\dist\send2claude-0.0.2.vsix
+```
 
 安装后**必须重载窗口**（`Developer: Reload Window` 或重启 IDE）。
 
